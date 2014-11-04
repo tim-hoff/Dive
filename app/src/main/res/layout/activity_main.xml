@@ -1,0 +1,84 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:background="#0099cc" tools:context=".MainActivity"
+    android:id="@+id/Outter">
+
+    <!-- The primary full-screen view. This can be replaced with whatever view
+         is needed to present your content, e.g. VideoView, SurfaceView,
+         TextureView, etc. -->
+
+    <!-- This FrameLayout insets its children based on system windows using
+         android:fitsSystemWindows. -->
+    <FrameLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:fitsSystemWindows="true"
+        android:id="@+id/Inner">
+
+        <TextView android:id="@+id/fullscreen_content" android:layout_width="match_parent"
+            android:layout_height="424dp" android:keepScreenOn="true" android:textColor="#33b5e5"
+            android:textStyle="bold" android:textSize="50sp" android:gravity="center"
+            android:text="@string/dummy_content"
+            android:layout_gravity="center_horizontal|bottom" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:gravity="center_horizontal">
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="time"
+                android:id="@+id/editHour"
+                android:layout_gravity="top"
+                android:singleLine="false"
+                android:text="@string/dummy_hour"
+                android:maxLength="2"
+                android:autoText="false"
+                android:minLines="2"
+                android:numeric="integer" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="time"
+                android:id="@+id/editMin"
+                android:maxLength="2"
+                android:text="@string/dummy_min"
+                android:elegantTextHeight="true"
+                android:minLines="2"
+                android:numeric="integer" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="time"
+                android:id="@+id/editSeconds"
+                android:text="@string/dummy_sec"
+                android:maxLength="2"
+                android:minLines="2"
+                android:numeric="integer" />
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+    <LinearLayout android:id="@+id/fullscreen_content_controls" style="?metaButtonBarStyle"
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center_horizontal"
+        android:background="@color/black_overlay" android:orientation="horizontal"
+        tools:ignore="UselessParent">
+
+        <Button android:id="@+id/dummy_button" style="?metaButtonBarButtonStyle"
+            android:layout_width="0dp" android:layout_height="wrap_content"
+            android:layout_weight="1" android:text="@string/dummy_button" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add"
+            android:id="@+id/dummy_add" />
+
+    </LinearLayout>
+
+</FrameLayout>
