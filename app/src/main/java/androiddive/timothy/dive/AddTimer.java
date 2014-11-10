@@ -34,10 +34,7 @@ public class AddTimer extends Activity implements View.OnClickListener  {
         bAdd=(Button) findViewById(R.id.buttonAdd);
         bAdd.setOnClickListener(this);
         lay = (LinearLayout) findViewById(R.id.LayTon);
-        nlay= new LinearLayout(this);
-        nlay.setOrientation(LinearLayout.HORIZONTAL);
-        lay.addView(nlay);
-        nlay.setGravity(Gravity.TOP);
+
 
 
 
@@ -47,25 +44,30 @@ public class AddTimer extends Activity implements View.OnClickListener  {
     public void onClick(View v) {
         if(v.getId()==R.id.buttonAdd){
             // do this with a struct later
+            nlay= new LinearLayout(this);
+            nlay.setOrientation(LinearLayout.HORIZONTAL);
+            lay.addView(nlay);
+            nlay.setGravity(Gravity.TOP);
 
             EditText nh= createEditText((String)getText(R.string.dummy_Ihour),10,0,0,0);
             nlay.addView(nh);
+            nh.setNextFocusRightId(1);
             nh.setGravity(Gravity.TOP);
 
 
-            EditText col1= createEditText((String)getText(R.string.dummy_col),0,0,0,0);
+            TextView col1= createTextView((String)getText(R.string.dummy_col),0,0,0,0);
             nlay.addView(col1);
 
             EditText nm= createEditText((String)getText(R.string.dummy_Imin),0,0,0,0);
             nlay.addView(nm);
 
-            EditText col2= createEditText((String) getText(R.string.dummy_col),0,0,0,0);
+            TextView col2= createTextView((String) getText(R.string.dummy_col),0,0,0,0);
             nlay.addView(col2);
 
             EditText ns= createEditText((String)getText(R.string.dummy_Isec),0,0,0,0);
             nlay.addView(ns);
 
-            EditText x = createEditText((String)getText(R.string.dummy_x),35,0,15,0);
+            TextView x = createTextView((String)getText(R.string.dummy_x),35,0,15,0);
             nlay.addView(x);
 
             EditText inc= createEditText((String)getText(R.string.dummy_Inc),0,0,0,0);
@@ -105,25 +107,44 @@ public class AddTimer extends Activity implements View.OnClickListener  {
         edittext.setTextColor(Color.WHITE);
         edittext.setTextSize(30);
         edittext.setMaxLines(1);
-
         edittext.setTypeface(null, Typeface.NORMAL);
 
 
-        if(edittext.length()==1){
-            edittext.setFilters(new InputFilter[]{new InputFilter.LengthFilter(1)});
-            edittext.setCursorVisible(false);
-            edittext.setFocusable(false);
-            edittext.setFocusableInTouchMode(false);
-            edittext.setFreezesText(true);
-            edittext.setClickable(false);
-        } else {
-            edittext.setFilters(new InputFilter[]{new InputFilter.LengthFilter(2)});
 
-            edittext.setInputType(InputType.TYPE_CLASS_NUMBER);
-        }
-            edittext.setPadding(l,t,r,b);
+        edittext.setFilters(new InputFilter[]{new InputFilter.LengthFilter(2)});
+        edittext.setInputType(InputType.TYPE_CLASS_NUMBER);
+        edittext.setPadding(l,t,r,b);
         edittext.setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
+        edittext.setSelectAllOnFocus(true);
         return edittext;
+    }
+    private TextView createTextView(String str,int l,int t,int r,int b)
+    {
+        TextView textview = new TextView(this);
+        textview.setText(str);
+        textview.setTextColor(Color.WHITE);
+        textview.setTextSize(30);
+        textview.setMaxLines(1);
+        textview.setTypeface(null, Typeface.NORMAL);
+
+
+        if(textview.length()==1){
+            textview.setFilters(new InputFilter[]{new InputFilter.LengthFilter(1)});
+            textview.setCursorVisible(false);
+            textview.setFocusable(false);
+            textview.setFocusableInTouchMode(false);
+            textview.setFreezesText(true);
+            textview.setClickable(false);
+
+        } else {
+            textview.setFilters(new InputFilter[]{new InputFilter.LengthFilter(2)});
+
+            textview.setInputType(InputType.TYPE_CLASS_NUMBER);
+        }
+        textview.setPadding(l,t,r,b);
+        textview.setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
+        textview.setSelectAllOnFocus(true);
+        return textview;
     }
 
 }
