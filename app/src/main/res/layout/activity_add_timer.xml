@@ -1,0 +1,268 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ff000000"
+    tools:context="androiddive.timothy.dive.AddTimer">
+
+    <FrameLayout android:layout_width="match_parent" android:layout_height="459dp"
+        android:fitsSystemWindows="true"
+        android:id="@+id/Inner"
+        android:layout_gravity="top|bottom|right">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_gravity="right|bottom"
+            android:id="@+id/LayTon">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:focusable="true" android:focusableInTouchMode="true"
+                android:layout_width="0px" android:layout_height="0px"
+                android:id="@+id/focusFix" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/editText10"
+                android:text="Timer Name"
+                android:inputType="none"
+                android:clickable="false"
+                android:cursorVisible="false"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:textStyle="normal"
+                android:textSize="25dp"
+                android:paddingLeft="10dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp" />
+
+            <EditText
+                android:layout_width="185dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/editText11"
+                android:textStyle="normal"
+                android:text="Timer"
+                android:textSize="30dp"
+                android:paddingLeft="10dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:textColor="@android:color/white"
+                android:maxLength="40"
+                android:maxLines="1"
+                android:longClickable="true"
+                android:selectAllOnFocus="true"/>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView"
+                    android:text="Time"
+                    android:inputType="none"
+                    android:clickable="false"
+                    android:cursorVisible="false"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:textStyle="normal"
+                    android:textSize="25dp"
+                    android:paddingLeft="10dp"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView3"
+                    android:text="             "
+                    android:inputType="none"
+                    android:clickable="false"
+                    android:cursorVisible="false"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:textStyle="normal"
+                    android:textSize="20dp"
+                    android:paddingLeft="10dp"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:singleLine="true" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView2"
+                    android:text="Repeat"
+                    android:inputType="none"
+                    android:clickable="false"
+                    android:cursorVisible="false"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:textStyle="normal"
+                    android:textSize="25dp"
+                    android:paddingLeft="10dp"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:visibility="visible">
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="time"
+                    android:id="@+id/editText3"
+                    android:layout_gravity="top"
+                    android:singleLine="false"
+                    android:text="@string/dummy_hour"
+                    android:maxLength="2"
+                    android:autoText="false"
+                    android:minLines="2"
+                    android:numeric="integer"
+                    android:background="#00000000"
+                    android:textSize="30dp"
+                    android:textColor="@android:color/white"
+                    android:paddingLeft="10dp" />
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/editText4"
+                    android:text="@string/dummy_col"
+                    android:maxLength="1"
+                    android:background="#00000000"
+                    android:freezesText="true"
+                    android:textSize="30dp"
+                    android:textColor="@android:color/white" />
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="time"
+                    android:id="@+id/editText5"
+                    android:maxLength="2"
+                    android:text="@string/dummy_min"
+                    android:elegantTextHeight="false"
+                    android:minLines="2"
+                    android:numeric="integer"
+                    android:background="#00000000"
+                    android:textSize="30dp"
+                    android:textColor="@android:color/white" />
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/editText6"
+                    android:text="@string/dummy_col"
+                    android:maxLength="1"
+                    android:background="#00000000"
+                    android:freezesText="true"
+                    android:textSize="30dp"
+                    android:textColor="@android:color/white" />
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="time"
+                    android:id="@+id/editText7"
+                    android:text="@string/dummy_sec"
+                    android:maxLength="2"
+                    android:minLines="2"
+                    android:numeric="integer"
+                    android:background="#00000000"
+                    android:textSize="30dp"
+                    android:textColor="@android:color/white" />
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/editText8"
+                    android:text="@string/dummy_x"
+                    android:maxLength="1"
+                    android:background="#00000000"
+                    android:freezesText="true"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:textSize="30dp"
+                    android:textColor="@android:color/white" />
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="time"
+                    android:id="@+id/editText9"
+                    android:text="@string/dummy_Inc"
+                    android:maxLength="2"
+                    android:minLines="2"
+                    android:numeric="integer"
+                    android:background="#00000000"
+                    android:textSize="30dp"
+                    android:textColor="@android:color/white" />
+
+            </LinearLayout>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="+"
+                android:id="@+id/buttonAdd"
+                android:paddingRight="10dp"
+                android:textSize="50dp"
+                android:background="#ff020202"
+                android:textColor="@android:color/white"
+                android:textAlignment="gravity"
+                android:textStyle="normal"
+                android:layout_marginBottom="-10dp"
+                android:layout_gravity="right" />
+
+
+        </LinearLayout>
+    </FrameLayout>
+
+    <LinearLayout android:id="@+id/fullscreen_content_controls" style="?metaButtonBarStyle"
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        tools:ignore="UselessParent"
+        android:background="#ff020202"
+        android:weightSum="1"
+        android:paddingBottom="5dp"
+        android:layout_gravity="bottom"
+        android:gravity="center_horizontal"
+        android:showDividers="none">
+
+        <ImageButton
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:id="@+id/buttonCheck"
+            android:background="@drawable/check"
+            android:layout_gravity="bottom"
+            android:clickable="true"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:adjustViewBounds="false"
+            android:paddingLeft="-3dp"
+            android:paddingRight="-3dp" />
+
+        <ImageButton
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:id="@+id/buttonCross"
+            android:background="@drawable/cross"
+            android:clickable="true"
+            android:cropToPadding="false"
+            android:focusableInTouchMode="true"
+            android:focusable="true"
+            android:layout_gravity="bottom" />
+
+    </LinearLayout>
+
+</FrameLayout>

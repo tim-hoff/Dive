@@ -1,6 +1,9 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:background="#0099cc" tools:context=".MainActivity"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ff000000"
+    tools:context=".MainActivity"
     android:id="@+id/Outter">
 
     <!-- The primary full-screen view. This can be replaced with whatever view
@@ -9,55 +12,188 @@
 
     <!-- This FrameLayout insets its children based on system windows using
          android:fitsSystemWindows. -->
-    <FrameLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+    <FrameLayout android:layout_width="match_parent" android:layout_height="459dp"
         android:fitsSystemWindows="true"
         android:id="@+id/Inner">
 
+
         <TextView android:id="@+id/fullscreen_content" android:layout_width="match_parent"
-            android:layout_height="424dp" android:keepScreenOn="true" android:textColor="#33b5e5"
+            android:layout_height="424dp" android:keepScreenOn="true" android:textColor="#ffa6a6a6"
             android:textStyle="bold" android:textSize="50sp" android:gravity="center"
-            android:text="@string/dummy_content"
-            android:layout_gravity="center_horizontal|bottom" />
+            android:text="@string/pref_default_timer_name"
+            android:layout_gravity="bottom|center_horizontal" />
+        <LinearLayout
+            android:orientation="vertical"
+            android:focusable="true" android:focusableInTouchMode="true"
+            android:layout_width="0px" android:layout_height="0px"
+            android:id="@id/focusFix"/>
 
         <LinearLayout
-            android:orientation="horizontal"
+            android:orientation="vertical"
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:gravity="center_horizontal">
+            android:layout_height="wrap_content">
 
-            <EditText
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:inputType="time"
-                android:id="@+id/editHour"
-                android:layout_gravity="top"
-                android:singleLine="false"
-                android:text="@string/dummy_hour"
-                android:maxLength="2"
-                android:autoText="false"
-                android:minLines="2"
-                android:numeric="integer" />
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:gravity="center_horizontal">
 
-            <EditText
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:inputType="time"
-                android:id="@+id/editMin"
-                android:maxLength="2"
-                android:text="@string/dummy_min"
-                android:elegantTextHeight="true"
-                android:minLines="2"
-                android:numeric="integer" />
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="time"
+                    android:id="@+id/editHour"
+                    android:layout_gravity="top"
+                    android:singleLine="false"
+                    android:text="@string/dummy_hour"
+                    android:maxLength="2"
+                    android:autoText="false"
+                    android:minLines="2"
+                    android:numeric="integer"
+                    android:background="#00000000"
+                    android:selectAllOnFocus="true"/>
 
-            <EditText
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:inputType="time"
-                android:id="@+id/editSeconds"
-                android:text="@string/dummy_sec"
-                android:maxLength="2"
-                android:minLines="2"
-                android:numeric="integer" />
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/editText"
+                    android:text="@string/dummy_col"
+                    android:maxLength="1"
+                    android:background="#00000000"
+                    android:freezesText="true"
+                    android:clickable="false"
+                    android:cursorVisible="false"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"/>
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="time"
+                    android:id="@+id/editMin"
+                    android:maxLength="2"
+                    android:text="@string/dummy_min"
+                    android:elegantTextHeight="false"
+                    android:minLines="2"
+                    android:numeric="integer"
+                    android:background="#00000000"
+                    android:selectAllOnFocus="true"/>
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/editText2"
+                    android:text="@string/dummy_col"
+                    android:maxLength="1"
+                    android:background="#00000000"
+                    android:freezesText="true"
+                    android:clickable="false"
+                    android:cursorVisible="false"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"/>
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="time"
+                    android:id="@+id/editSeconds"
+                    android:text="@string/dummy_sec"
+                    android:maxLength="2"
+                    android:minLines="2"
+                    android:numeric="integer"
+                    android:background="#00000000"
+                    android:selectAllOnFocus="true"
+                    android:editable="false"
+                    android:enabled="true" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:gravity="center_horizontal"
+                android:visibility="gone">
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="time"
+                    android:id="@+id/editText3"
+                    android:layout_gravity="top"
+                    android:singleLine="false"
+                    android:text="@string/dummy_hour"
+                    android:maxLength="2"
+                    android:autoText="false"
+                    android:minLines="2"
+                    android:numeric="integer"
+                    android:background="#00000000" />
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/editText4"
+                    android:text="@string/dummy_col"
+                    android:maxLength="1"
+                    android:background="#00000000"
+                    android:freezesText="true" />
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="time"
+                    android:id="@+id/editText5"
+                    android:maxLength="2"
+                    android:text="@string/dummy_min"
+                    android:elegantTextHeight="false"
+                    android:minLines="2"
+                    android:numeric="integer"
+                    android:background="#00000000" />
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/editText6"
+                    android:text="@string/dummy_col"
+                    android:maxLength="1"
+                    android:background="#00000000"
+                    android:freezesText="true" />
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="time"
+                    android:id="@+id/editText7"
+                    android:text="@string/dummy_sec"
+                    android:maxLength="2"
+                    android:minLines="2"
+                    android:numeric="integer"
+                    android:background="#00000000" />
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/editText8"
+                    android:text="@string/dummy_x"
+                    android:maxLength="1"
+                    android:background="#00000000"
+                    android:freezesText="true"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp" />
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="time"
+                    android:id="@+id/editText9"
+                    android:text="@string/dummy_Inc"
+                    android:maxLength="2"
+                    android:minLines="2"
+                    android:numeric="integer"
+                    android:background="#00000000" />
+
+            </LinearLayout>
 
         </LinearLayout>
 
@@ -66,18 +202,42 @@
     <LinearLayout android:id="@+id/fullscreen_content_controls" style="?metaButtonBarStyle"
         android:layout_width="match_parent" android:layout_height="wrap_content"
         android:layout_gravity="bottom|center_horizontal"
-        android:background="@color/black_overlay" android:orientation="horizontal"
-        tools:ignore="UselessParent">
+        android:orientation="horizontal"
+        tools:ignore="UselessParent"
+        android:background="#ff050505"
+        android:showDividers="none">
 
-        <Button android:id="@+id/dummy_button" style="?metaButtonBarButtonStyle"
-            android:layout_width="0dp" android:layout_height="wrap_content"
-            android:layout_weight="1" android:text="@string/dummy_button" />
+        <Button android:id="@+id/dummy_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/dummy_button"
+            android:enabled="true"
+            android:visibility="visible" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Add"
-            android:id="@+id/dummy_add" />
+            android:text="Stop Timer"
+            android:id="@+id/buttonStopTimer"
+            android:visibility="gone"
+            android:enabled="true"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Start Timer"
+            android:id="@+id/buttonStartTimer"
+            android:visibility="visible"
+            android:enabled="true"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add Timer"
+            android:id="@+id/dummy_add"
+            android:visibility="visible"
+            android:enabled="true"/>
 
     </LinearLayout>
 

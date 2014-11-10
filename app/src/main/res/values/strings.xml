@@ -2,10 +2,18 @@
 <resources>
 
     <string name="app_name">Dive</string>
-    <string name="dummy_button">Dummy Button</string>
-    <string name="dummy_content">DUMMY\nCONTENT</string>
-    <string name="dummy_hour">01</string>
-    <string name="dummy_min">30</string>
-    <string name="dummy_sec">20</string>
+    <string name="dummy_button">Settings</string>
+    <string name="dummy_hour">00</string>
+    <string name="dummy_min">01</string>
+    <string name="dummy_sec">00</string>
+    <string name="dummy_Ihour">00</string>
+    <string name="dummy_Imin">01</string>
+    <string name="dummy_Isec">00</string>
+    <string name="dummy_col">:</string>
+    <string name="dummy_x">x</string>
+    <string name="dummy_Inc">1</string>
+    <string name="title_activity_add_timer">AddTimer</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
 
 </resources>
